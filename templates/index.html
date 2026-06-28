@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FraudDetect AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <h2>💳 FraudDetect AI</h2>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#predict">Detection</a></li>
+            <li><a href="#tips">Tips</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="hero">
+
+    <h1>Financial Fraud Detection System</h1>
+
+    <p>
+        AI-powered Machine Learning platform for detecting fraudulent financial transactions.
+    </p>
+
+    <a href="#predict" class="hero-btn">
+        Start Detection
+    </a>
+
+</section>
+
+<section class="dashboard">
+
+    <div class="card">
+        <h3>💳 Transactions</h3>
+        <h1>1,048,575</h1>
+        <p>Dataset Records</p>
+    </div>
+
+    <div class="card">
+        <h3>🎯 Accuracy</h3>
+        <h1>99.95%</h1>
+        <p>KNN Model</p>
+    </div>
+
+    <div class="card">
+        <h3>📡 Detection</h3>
+        <h1>ACTIVE</h1>
+        <p>Real-Time Prediction</p>
+    </div>
+
+    <div class="card">
+        <h3>⚡ Status</h3>
+        <h1>ONLINE</h1>
+        <p>Flask Server</p>
+    </div>
+
+</section>
+
+<section id="tips" class="tips">
+
+    <h2>🛡 Fraud Detection Tips</h2>
+
+    <ul>
+        <li>Never share your banking PIN.</li>
+        <li>Verify suspicious transactions.</li>
+        <li>Enable two-factor authentication.</li>
+        <li>Monitor your account regularly.</li>
+    </ul>
+
+</section>
+
+<section id="predict" class="predict-section">
+
+<h2>Transaction Prediction</h2>
+
+<form action="/predict" method="POST">
+
+<input type="number" name="step" placeholder="Step" required>
+
+<select name="type" required>
+    <option value="">Select Transaction Type</option>
+    <option value="PAYMENT">PAYMENT</option>
+    <option value="TRANSFER">TRANSFER</option>
+    <option value="CASH_OUT">CASH OUT</option>
+    <option value="DEBIT">DEBIT</option>
+</select>
+
+<input type="number" step="any" name="amount" placeholder="Transaction Amount" required>
+
+<input type="number" step="any" name="oldbalanceOrg" placeholder="Old Balance Origin" required>
+
+<input type="number" step="any" name="newbalanceOrig" placeholder="New Balance Origin" required>
+
+<input type="number" step="any" name="oldbalanceDest" placeholder="Old Balance Destination" required>
+
+<input type="number" step="any" name="newbalanceDest" placeholder="New Balance Destination" required>
+
+<button type="submit">
+🔍 Detect Fraud
+</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<h3>Financial Fraud Detection System</h3>
+
+<p>
+Developed by <strong>YG Preshygold</strong><br>
+Department of Computer Science<br>
+Final Year Project (2026)
+</p>
+
+</footer>
+
+</body>
+</html>

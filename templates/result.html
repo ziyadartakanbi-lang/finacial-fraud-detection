@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Prediction Result</h1>
+
+    {% if prediction == "Fraudulent Transaction" %}
+
+    <div class="result fraud-card">
+
+        <h2>🚨 Fraud Detected</h2>
+
+        <p>
+            This transaction appears to be fraudulent.
+        </p>
+
+        <h3>{{ probability }}%</h3>
+
+        <div class="progress">
+            <div class="progress-bar danger"
+                 style="width: {{ probability }}%;">
+            </div>
+        </div>
+
+    </div>
+
+    {% else %}
+
+    <div class="result safe-card">
+
+        <h2>✅ Legitimate Transaction</h2>
+
+        <p>
+            This transaction appears to be safe.
+        </p>
+
+        <h3>{{ probability }}%</h3>
+
+        <div class="progress">
+            <div class="progress-bar safe"
+                 style="width: {{ probability }}%;">
+            </div>
+        </div>
+
+    </div>
+
+    {% endif %}
+
+    <br>
+
+    <a href="/" class="btn">
+        🔄 Check Another Transaction
+    </a>
+
+</div>
+
+</body>
+</html>
